@@ -1,0 +1,2465 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><div id="app">
+
+  <div id="giftScreen">
+    <div class="giftWrapper">
+      <div class="giftBox">
+        <div class="giftLid">
+          <div class="giftRibbonVertical"></div>
+          <div class="giftBow">
+            <span class="bowLeft"></span>
+            <span class="bowRight"></span>
+            <span class="bowCenter"></span>
+          </div>
+        </div>
+        <div class="giftBody">
+          <div class="giftRibbonVertical"></div>
+          <div class="giftRibbonHorizontal"></div>
+        </div>
+      </div>
+      <div class="giftText">เค้ามีอะไรจาให้แหละ</div>
+      <button id="openGiftBtn" class="openGiftBtn" type="button">เปิดดูสิ ♡</button>
+    </div>
+  </div>
+
+  <div id="quizScreen">
+    <div class="quizContainer">
+      <div class="quizTopDecor">♡</div>
+      <div class="quizTitle">ไหนมาลองทวนความจำกันหน่อยซิ</div>
+      <div class="quizSubTitle">ตอบคำถามให้ครบก่อนน 🤍</div>
+      <div id="questionArea">
+        <div class="questionBox activeQuestion" data-answer="C">
+          <div class="questionCard">
+            <div class="questionNumber">QUESTION 01</div>
+            <div class="questionText">วันนี้วันอะไรน้า</div>
+          </div>
+          <div class="answerList">
+            <button class="answerBtn" data-choice="A" type="button"><span class="choiceLetter">A</span><span>วันพุธ</span></button>
+            <button class="answerBtn" data-choice="B" type="button"><span class="choiceLetter">B</span><span>วันทำงาน</span></button>
+            <button class="answerBtn" data-choice="C" type="button"><span class="choiceLetter">C</span><span>วันครบรอบ</span></button>
+          </div>
+        </div>
+        <div class="questionBox" data-answer="B">
+          <div class="questionCard">
+            <div class="questionNumber">QUESTION 02</div>
+            <div class="questionText">งืม เราเจอกันครั้งแรกที่ไหนนะ 🤔</div>
+          </div>
+          <div class="answerList">
+            <button class="answerBtn" data-choice="A" type="button"><span class="choiceLetter">A</span><span>สุ่มแชทโลก</span></button>
+            <button class="answerBtn" data-choice="B" type="button"><span class="choiceLetter">B</span><span>ย่านคนชิล</span></button>
+            <button class="answerBtn" data-choice="C" type="button"><span class="choiceLetter">C</span><span>ที่ไหนไม่รู้</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="quizProgress"><span id="quizProgressText">1 / 2</span></div>
+    </div>
+  </div>
+
+  <!-- ปรับแก้ซองคูปองใหม่ -->
+  <div id="envelopeScreen">
+    <div class="envelopeIntro">เก่งมากเยยย 🤍</div>
+    <div class="envelopeSub">ยังมีของอีกอย่างอยู่ข้างในนะ</div>
+    <div class="envelopeArea" id="envelopeArea">
+      <div class="envelope">
+        <div class="envelopeBack"></div>
+        <div class="envelopePaper"></div>
+        <div class="envelopeFront">
+          <div class="envelopeFlap"></div>
+          <div class="envelopeHeart">✂️</div>
+          <div class="tearLine"> - - - - - - - - - - - - - - - </div>
+        </div>
+      </div>
+      <div class="tearHint">‹ swipe เพื่อฉีกซอง ›</div>
+    </div>
+  </div>
+
+  <div id="couponScreen">
+    <div class="couponTitle">SPECIAL FOR YOU ♡</div>
+    <div class="couponSub">คูปองพิเศษสำหรับบิบี๋คนเดียวเลย</div>
+    <div class="couponList">
+      <div class="couponCard couponOne">
+        <img src="https://files.catbox.moe/7t8jdo.png" alt="coupon 1" loading="eager">
+      </div>
+      <div class="couponCard couponTwo">
+        <img src="https://files.catbox.moe/ca67xt.png" alt="coupon 2" loading="eager">
+      </div>
+    </div>
+    <button id="continueToBookBtn" class="continueToBookBtn" type="button">เปิดสมุดต่อ ♡</button>
+  </div>
+
+  <div id="passwordScreen">
+    <div class="passwordTitle">เก่งมากกก 🤍</div>
+    <div class="passwordText">ไหนลองใส่รหัสผ่านเพื่อเปิดของข้างในดูซิ</div>
+    <input id="passwordInput" type="password" inputmode="numeric" maxlength="6" placeholder="รหัสผ่าน" autocomplete="off">
+    <button id="passwordBtn" type="button">เปิดสมุด ♡</button>
+    <div id="passwordError"></div>
+  </div>
+
+  <div class="mainContent" id="mainContent">
+    <div class="topArea">
+      <div class="title">♡ for my sweetest boy</div>
+      <div class="pageCount">12 Pages</div>
+    </div>
+
+    <div class="bookArea" id="bookArea">
+      <div class="coverBook" id="coverBook">
+        <div class="coverBack"></div>
+        <div class="frontCover">
+          <div class="coverBorder">
+            <div class="coverSmall">OUR LITTLE STORY</div>
+            <div class="coverTitle">My 3 Months<br>With You</div>
+            <div class="coverHeart">♡</div>
+            <div class="coverDate">A little memory of us</div>
+          </div>
+        </div>
+        <div class="openHint">tap to open ♡</div>
+      </div>
+
+      <div class="book" id="book">
+        <div class="spread active">
+          <div class="page leftPage photoPage">
+            <div class="coverEdge leftEdge"></div>
+            <div class="paper">
+              <div class="cuteBorder"></div>
+              <div class="photoArea">
+                <div class="photoFrame rotateLeft">
+                  <img src="https://files.catbox.moe/qx6w8i.jpg" alt="memory" loading="eager">
+                </div>
+                <div class="photoDecor decorStar">✦</div>
+              </div>
+              <div class="tinyDecor">♡</div>
+              <div class="pageNo">01</div>
+            </div>
+          </div>
+          <div class="page rightPage textPage">
+            <div class="coverEdge rightEdge"></div>
+            <div class="paper">
+              <div class="cuteBorder"></div>
+              <div class="pageLabel">OUR STORY</div>
+              <div class="message">ฮ๊ายฮายคับอ้วง วนมาถึงวันครบรอบเราอีกแล้วนะ รู้มั้ยวันนี้พิเศษกับเค้ามากๆเลย</div>
+              <div class="littleHeart">♡</div>
+              <div class="pageNo">02</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="spread">
+          <div class="page leftPage textPage">
+            <div class="coverEdge leftEdge"></div>
+            <div class="paper">
+              <div class="cuteBorder"></div>
+              <div class="pageLabel">THE BEGINNING</div>
+              <div class="message">พอถึงวันครบรอบ เค้าจะนึกถึงวันแรกที่เราคบกัน ตอนที่ตกลงคบกับอ้วน ตอนนั้นมีความสุขมากๆเลยเเหละ</div>
+              <div class="littleHeart">♡</div>
+              <div class="pageNo">03</div>
+            </div>
+          </div>
+          <div class="page rightPage photoPage">
+            <div class="coverEdge rightEdge"></div>
+            <div class="paper">
+              <div class="cuteBorder"></div>
+              <div class="photoArea">
+                <div class="photoFrame rotateRight">
+                  <img src="https://files.catbox.moe/sknr3a.jpg" alt="memory" loading="lazy">
+                </div>
+                <div class="photoDecor decorHeart">♥</div>
+              </div>
+              <div class="tinyDecor">✿</div>
+              <div class="pageNo">04</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="spread">
+          <div class="page leftPage page5">
+            <div class="coverEdge leftEdge"></div>
+            <div class="paper">
+              <div class="cuteBorder"></div>
+              <div class="page5Layout">
+                <div class="page5PhotoArea">
+                  <div class="photoFrame rotateLeft">
+                    <img src="https://files.catbox.moe/l76bk8.jpg" alt="memory" loading="lazy">
+                  </div>
+                </div>
+                <div class="page5Text">ตั้งแต่มีอ้วนเข้ามา ชีวิตเค้าก็ดูเหมือนจะมีความหมาย</div>
+              </div>
+              <div class="pageNo">05</div>
+            </div>
+          </div>
+          <div class="page rightPage page6">
+            <div class="coverEdge rightEdge"></div>
+            <div class="paper">
+              <div class="cuteBorder"></div>
+              <div class="page6Layout">
+                <div class="page6Text">จากที่เค้าเคยใช้ชีวิตไปวันๆ ตอนนี้กลับอยากใช้เวลาอยู่กับอ้วนไปนานๆ อีกซักร้อยปีเลย</div>
+                <div class="page6PhotoArea">
+                  <div class="photoFrame rotateRight">
+                    <img src="https://files.catbox.moe/e8z1cs.jpg" alt="memory" loading="lazy">
+                  </div>
+                  <div class="photoDecor decorHeart6">♡</div>
+                </div>
+              </div>
+              <div class="pageNo">06</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="spread">
+          <div class="page leftPage textPage">
+            <div class="coverEdge leftEdge"></div>
+            <div class="paper">
+              <div class="cuteBorder"></div>
+              <div class="pageLabel">THANK YOU</div>
+              <div class="message longMessage">เค้าขอบคุณอ้วนนะที่เข้ามาทำให้ชีวิตเค้ามีความหมาย ขอบคุณที่คอยมอบความรักความสำคัญให้เค้า ขอบคุณที่อ้วนคอยใส่ใจ คอยดูแลเค้าอยู่ตลอด</div>
+              <div class="littleHeart">♡</div>
+              <div class="pageNo">07</div>
+            </div>
+          </div>
+          <div class="page rightPage textPage">
+            <div class="coverEdge rightEdge"></div>
+            <div class="paper">
+              <div class="cuteBorder"></div>
+              <div class="pageLabel">FROM MY HEART</div>
+              <div class="message longMessage">ตลอดเวลาที่อยู่ด้วยกันมาอ้วนสำคัญกับเค้ามาก เค้าไม่อยากเสียอ้วนไปให้ใคร ถึงเราจะทะเลาะหรือไม่เข้าใจกันบ่อยๆ แต่สุดท้ายแล้วคำตอบของเค้าก็คืออ้วนนะ เค้ารักอ้วนที่สุดและรักมาตลอด</div>
+              <div class="pageNo">08</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="spread">
+          <div class="page leftPage photoPage">
+            <div class="coverEdge leftEdge"></div>
+            <div class="paper">
+              <div class="cuteBorder"></div>
+              <div class="photoArea">
+                <div class="photoFrame rotateLeft">
+                  <img src="https://files.catbox.moe/fyqkm3.jpg" alt="memory" loading="lazy">
+                </div>
+                <div class="photoDecor decorStar">✦</div>
+              </div>
+              <div class="tinyDecor">♡</div>
+              <div class="pageNo">09</div>
+            </div>
+          </div>
+          <div class="page rightPage textPage">
+            <div class="coverEdge rightEdge"></div>
+            <div class="paper">
+              <div class="cuteBorder"></div>
+              <div class="message longMessage">อ้วนสัญญากับเค้านะว่าจะไม่ทิ้งเค้าไปไหน ต่อให้เราทะเลาะกันหนักแค่ไหนขอให้อย่ายอมแพ้เรื่องของเรา เค้าอยากมีอ้วนไปตลอดเลย เค้ารักอ้วนมากๆเลย 🥺🤍</div>
+              <div class="littleHeart">♡</div>
+              <div class="pageNo">10</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="spread">
+          <div class="page leftPage photoPage">
+            <div class="coverEdge leftEdge"></div>
+            <div class="paper">
+              <div class="cuteBorder"></div>
+              <div class="photoArea">
+                <div class="photoFrame rotateRight">
+                  <img src="https://files.catbox.moe/zhst10.png" alt="memory" loading="lazy">
+                </div>
+                <div class="photoDecor decorHeart">♥</div>
+              </div>
+              <div class="tinyDecor">✿</div>
+              <div class="pageNo">11</div>
+            </div>
+          </div>
+          <div class="page rightPage textPage finalPage">
+            <div class="coverEdge rightEdge"></div>
+            <div class="paper">
+              <div class="cuteBorder"></div>
+              <div class="message longMessage">เราจะรักกันไปนานๆ ไม่ทิ้งกันไปไหนนะอ้วน อยู่ด้วยกันจนกว่าจะแต่งงานกันเลยนะ สิ่งที่เค้าต้องการอย่างเดียวคือได้ใช้ชีวิตกับอ้วนไปตลอด</div>
+              <div class="littleHeart">♡</div>
+              <div class="pageNo">12</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ปรับแก้กรอบวิดีโอ 9:16 ท้ายคลิป และใส่แถบควบคุม (controls) -->
+    <div id="bookEnding">
+      <div class="endingHeart">♡</div>
+      <div class="endingTitle">Our story continues</div>
+      <div class="endingSub">♡ always with you ♡</div>
+      
+      <div class="endingVideoWrapper">
+        <video id="endingVideo" src="https://files.catbox.moe/cpw1aw.mp4" controls playsinline webkit-playsinline autoplay loop muted></video>
+      </div>
+    </div>
+
+    <div class="bottomArea">
+      <div class="toText">To Adisorn 🤍</div>
+      <div class="swipeHint" id="swipeHint">tap the cover to open ♡</div>
+    </div>
+  </div>
+
+  <audio id="bgMusic" src="https://raw.githubusercontent.com/meyoupf-ops/music/3ea88191fbb0d94ad0bf92a00515bf66a374c82e/VID_20260901130236.mp3" preload="auto"></audio>
+  <div id="hearts"></div>
+
+</div>
+<style>@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #414d76;
+}
+
+body {
+  font-family: "Kodchasan", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* กัน element โดยเฉพาะวิดีโอที่อยู่นอก #app
+   ไม่ให้โผล่ต่อจากหน้าเว็บ */
+body > video,
+body > iframe {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  z-index: -10;
+  pointer-events: none;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  touch-action: manipulation;
+}
+
+/* ==================================================
+   APP & MAIN CONTAINER
+================================================== */
+
+#app {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  min-height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  color: white;
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(255,255,255,.08),
+      transparent 45%
+    ),
+    #414d76;
+}
+
+.mainContent {
+  width: 100%;
+  height: 100%;
+  display: none;
+  opacity: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 16px;
+  position: relative;
+  z-index: 10;
+  transition: opacity 0.6s ease;
+}
+
+.mainContent.show {
+  display: flex !important;
+  opacity: 1 !important;
+}
+
+/* ==================================================
+   GIFT SCREEN
+================================================== */
+
+#giftScreen {
+  position: absolute;
+  inset: 0;
+  z-index: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(255,255,255,.18),
+      transparent 45%
+    ),
+    #414d76;
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+#giftScreen.hidden {
+  opacity: 0;
+  transform: scale(1.06);
+  pointer-events: none;
+}
+
+.giftWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 901;
+}
+
+.giftBox {
+  position: relative;
+  width: 155px;
+  height: 135px;
+  margin-bottom: 28px;
+  filter: drop-shadow(0 18px 25px rgba(35,30,60,.25));
+}
+
+.giftBody {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 0;
+  height: 92px;
+  border-radius: 8px 8px 13px 13px;
+  background: linear-gradient(135deg, #ffffff, #f8f6f4);
+  border: 2px solid rgba(210,190,195,.5);
+}
+
+.giftLid {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 5;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #ffffff, #f7f5f4);
+  border: 2px solid rgba(210,190,195,.55);
+}
+
+.giftRibbonVertical {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 23px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to right,
+    #f6c6d7,
+    #fbdce7,
+    #f2b8ce
+  );
+}
+
+.giftRibbonHorizontal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 34px;
+  height: 22px;
+  background: linear-gradient(
+    to bottom,
+    #f6c6d7,
+    #fbdce7,
+    #f2b8ce
+  );
+}
+
+.giftBow {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  width: 75px;
+  height: 42px;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.bowLeft,
+.bowRight {
+  position: absolute;
+  top: 8px;
+  width: 39px;
+  height: 28px;
+  border-radius: 70% 35% 70% 35%;
+  background: linear-gradient(135deg, #f8cadb, #efaac4);
+}
+
+.bowLeft {
+  left: 0;
+  transform: rotate(-25deg);
+}
+
+.bowRight {
+  right: 0;
+  transform: scaleX(-1) rotate(-25deg);
+}
+
+.bowCenter {
+  position: absolute;
+  left: 50%;
+  top: 15px;
+  width: 20px;
+  height: 20px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: #eeabc3;
+}
+
+.giftText {
+  margin-bottom: 14px;
+  font-size: 21px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.openGiftBtn {
+  position: relative;
+  z-index: 999;
+  padding: 11px 27px;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 999px;
+  background: rgba(255,255,255,.92);
+  color: #a9677c;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 7px 18px rgba(30,25,55,.16);
+  cursor: pointer;
+  transition: transform .2s ease;
+}
+
+.openGiftBtn:active {
+  transform: scale(.95);
+}
+
+/* ==================================================
+   QUIZ
+================================================== */
+
+#quizScreen {
+  position: absolute;
+  inset: 0;
+  z-index: 800;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 28px 20px;
+  background: linear-gradient(
+    180deg,
+    #c29ab6 0%,
+    #c0a7bd 45%,
+    #aebfd4 100%
+  );
+  opacity: 0;
+  transition: opacity .6s ease;
+  pointer-events: none;
+}
+
+#quizScreen.show {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#quizScreen.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.quizContainer {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quizTopDecor {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255,255,255,.8);
+  color: #e69db8;
+  font-size: 28px;
+}
+
+.quizTitle {
+  margin-bottom: 4px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.quizSubTitle {
+  margin-bottom: 18px;
+  font-size: 10px;
+  color: rgba(255,255,255,.8);
+}
+
+#questionArea {
+  width: 100%;
+}
+
+.questionBox {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.questionBox.activeQuestion {
+  display: flex;
+  animation: quizIn .5s ease;
+}
+
+@keyframes quizIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.questionCard {
+  position: relative;
+  width: 100%;
+  min-height: 190px;
+  padding: 28px 20px;
+  margin-bottom: 16px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #fffaf2, #f9eee4);
+  border: 2px solid rgba(255,255,255,.55);
+  box-shadow:
+    8px 9px 0 rgba(255,255,255,.45),
+    0 14px 30px rgba(60,50,75,.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.questionNumber {
+  margin-bottom: 15px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #b38884;
+  font-weight: 600;
+}
+
+.questionText {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #655858;
+  font-weight: 600;
+}
+
+.answerList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.answerBtn {
+  width: 100%;
+  min-height: 53px;
+  padding: 10px 16px;
+  border: 2px solid rgba(255,255,255,.6);
+  border-radius: 18px;
+  background: rgba(255,248,239,.95);
+  color: #665955;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform .15s ease,
+    background .2s ease;
+}
+
+.answerBtn:active {
+  transform: scale(.98);
+}
+
+.answerBtn.correct {
+  background: #f5d6e0;
+}
+
+.answerBtn.wrong {
+  background: #f4d8dc;
+  animation: shake .25s ease;
+}
+
+.choiceLetter {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3b8cb;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.answerBtn.correct .choiceLetter {
+  background: #d88fa9;
+}
+
+@keyframes shake {
+  0%,100% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(-5px);
+  }
+
+  70% {
+    transform: translateX(5px);
+  }
+}
+
+.quizProgress {
+  margin-top: 17px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.22);
+  font-size: 9px;
+}
+
+/* ==================================================
+   ENVELOPE
+================================================== */
+
+#envelopeScreen {
+  position: absolute;
+  inset: 0;
+  z-index: 700;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    #c29ab6 0%,
+    #bca9c2 50%,
+    #afc1d5 100%
+  );
+  opacity: 0;
+  transition: opacity .6s ease;
+  pointer-events: none;
+}
+
+#envelopeScreen.show {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#envelopeScreen.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.envelopeIntro {
+  margin-bottom: 7px;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.envelopeSub {
+  margin-bottom: 30px;
+  font-size: 10px;
+  opacity: .78;
+}
+
+.envelopeArea {
+  position: relative;
+  width: 320px;
+  height: 210px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  touch-action: pan-y;
+}
+
+.envelope {
+  position: relative;
+  width: 290px;
+  height: 165px;
+  filter: drop-shadow(0 14px 22px rgba(45,35,60,.22));
+  transition:
+    transform .7s ease,
+    opacity .6s ease;
+}
+
+.envelope.tear {
+  transform: translateX(-115%) rotate(-8deg);
+  opacity: 0;
+}
+
+.envelopeBack {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    #e0f7fa 0%,
+    #ffebee 100%
+  );
+  border: 2px solid rgba(255,255,255,.6);
+}
+
+.envelopePaper {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  top: 15px;
+  height: 120px;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.envelopeFront {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    #e1f5fe 0%,
+    #fce4ec 100%
+  );
+  border: 2px solid #f8bbd0;
+}
+
+.envelopeFlap {
+  position: absolute;
+  top: -75px;
+  left: 35px;
+  width: 220px;
+  height: 120px;
+  transform: rotate(45deg);
+  background: #b3e5fc;
+  opacity: .6;
+}
+
+.envelopeHeart {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%,-50%);
+  width: 48px;
+  height: 48px;
+  background: #f8bbd0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+
+.tearLine {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 15px;
+  color: #ec407a;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.tearHint {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 1px;
+  opacity: .8;
+}
+
+/* ==================================================
+   COUPON
+================================================== */
+
+#couponScreen {
+  position: absolute;
+  inset: 0;
+  z-index: 650;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 16px 20px;
+  overflow-y: auto;
+  background: linear-gradient(
+    180deg,
+    #c29ab6 0%,
+    #b9a8c3 45%,
+    #aec0d4 100%
+  );
+  opacity: 0;
+  transition: opacity .6s ease;
+  pointer-events: none;
+}
+
+#couponScreen.show {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.couponTitle {
+  margin-top: 3px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.couponSub {
+  margin-top: 5px;
+  margin-bottom: 16px;
+  font-size: 9px;
+  opacity: .78;
+  text-align: center;
+}
+
+.couponList {
+  width: 100%;
+  max-width: 395px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+}
+
+.couponCard {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.couponCard img {
+  display: block;
+  width: 100%;
+  max-width: 390px;
+  height: auto;
+  border-radius: 17px;
+  box-shadow: 0 10px 24px rgba(45,35,60,.18);
+}
+
+.continueToBookBtn {
+  margin-top: 17px;
+  margin-bottom: 8px;
+  padding: 11px 25px;
+  border: none;
+  border-radius: 999px;
+  background: #fff8f2;
+  color: #a9677c;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.continueToBookBtn:active {
+  transform: scale(.95);
+}
+
+/* ==================================================
+   PASSWORD
+================================================== */
+
+#passwordScreen {
+  position: absolute;
+  inset: 0;
+  z-index: 600;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  background: #414d76;
+  opacity: 0;
+  transition: opacity .6s ease;
+  pointer-events: none;
+}
+
+#passwordScreen.show {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#passwordScreen.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.passwordTitle {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.passwordText {
+  margin-bottom: 20px;
+  font-size: 11px;
+  opacity: .85;
+}
+
+#passwordInput {
+  width: 75%;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,.4);
+  border-radius: 14px;
+  outline: none;
+  background: rgba(255,255,255,.12);
+  color: white;
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+#passwordInput::placeholder {
+  color: rgba(255,255,255,.55);
+  letter-spacing: 1px;
+}
+
+#passwordBtn {
+  margin-top: 12px;
+  padding: 11px 25px;
+  border: none;
+  border-radius: 14px;
+  background: #f7cbd7;
+  color: #7e5262;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#passwordError {
+  min-height: 20px;
+  margin-top: 10px;
+  font-size: 10px;
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.topArea {
+  text-align: center;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.pageCount {
+  margin-top: 4px;
+  font-size: 12px;
+  opacity: .85;
+}
+
+/* ==================================================
+   BOOK AREA
+================================================== */
+
+.bookArea {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  z-index: 10;
+}
+
+/* ==================================================
+   COVER
+================================================== */
+
+.coverBook {
+  position: absolute;
+  width: 48%;
+  aspect-ratio: 2 / 3;
+  z-index: 100;
+  cursor: pointer;
+  perspective: 1500px;
+  transform-origin: left center;
+  transition:
+    transform .8s cubic-bezier(.2,.8,.2,1),
+    opacity .45s ease;
+  touch-action: manipulation;
+}
+
+.coverBook.opening {
+  transform: rotateY(-105deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.coverBack {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    #f7cbd7,
+    #efb7c9
+  );
+  box-shadow: 0 14px 35px rgba(30,25,55,.32);
+}
+
+.frontCover {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    #ffdce5 0%,
+    #f7c5d5 55%,
+    #efb6ca 100%
+  );
+  box-shadow:
+    inset 0 0 0 2px rgba(255,255,255,.45),
+    0 12px 30px rgba(30,25,55,.28);
+  transform-origin: left center;
+  backface-visibility: hidden;
+}
+
+.coverBorder {
+  position: absolute;
+  inset: 11px;
+  border: 2px solid rgba(255,255,255,.65);
+  border-radius: 99px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.coverSmall {
+  font-size: 7px;
+  letter-spacing: 3px;
+  color: #a9687b;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.coverTitle {
+  font-size: 18px;
+  line-height: 1.35;
+  color: #98566c;
+  font-weight: 600;
+}
+
+.coverHeart {
+  margin-top: 10px;
+  font-size: 22px;
+  color: #c87991;
+}
+
+.coverDate {
+  margin-top: 8px;
+  font-size: 7px;
+  letter-spacing: 1.5px;
+  color: #a9687b;
+}
+
+.openHint {
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,.75);
+}
+
+/* ==================================================
+   REAL BOOK
+================================================== */
+
+.book {
+  position: relative;
+  width: 96%;
+  aspect-ratio: 4 / 3;
+  perspective: 1500px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(.96);
+  transform-origin: center center;
+  transition:
+    opacity .45s ease,
+    transform .55s ease;
+}
+
+.book.revealed {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.book.closing {
+  pointer-events: none;
+  animation: bookClose 1.15s cubic-bezier(.2,.75,.25,1) forwards;
+}
+
+@keyframes bookClose {
+  0% {
+    transform:
+      perspective(1500px)
+      rotateY(0deg)
+      scale(1);
+    opacity: 1;
+  }
+
+  45% {
+    transform:
+      perspective(1500px)
+      rotateY(-18deg)
+      scale(.98);
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      perspective(1500px)
+      rotateY(-88deg)
+      scale(.88);
+    opacity: 0;
+  }
+}
+
+/* ==================================================
+   BOOK EDGE & SPREAD
+================================================== */
+
+.coverEdge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  z-index: 25;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    #e7aabd,
+    #f7ccd8,
+    #e6a8bc
+  );
+  box-shadow: 0 0 5px rgba(120,70,90,.18);
+}
+
+.leftEdge {
+  left: 0;
+  border-radius: 12px 0 0 12px;
+}
+
+.rightEdge {
+  right: 0;
+  border-radius: 0 12px 12px 0;
+}
+
+.spread {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(35px) scale(.96);
+  transition:
+    opacity .45s ease,
+    transform .55s cubic-bezier(.2,.8,.2,1);
+}
+
+.spread.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) scale(1);
+  z-index: 10;
+}
+
+.page {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+
+.paper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #fffdf7 0%,
+    #faf3e8 55%,
+    #f6eadf 100%
+  );
+  color: #665955;
+  box-shadow: 0 10px 25px rgba(25,30,55,.24);
+}
+
+.leftPage .paper {
+  border-radius: 12px 3px 3px 12px;
+  border-right: 1px solid rgba(130,105,95,.16);
+}
+
+.rightPage .paper {
+  border-radius: 3px 12px 12px 3px;
+  border-left: 1px solid rgba(130,105,95,.16);
+}
+
+.book::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to right,
+    rgba(100,80,70,.12),
+    rgba(255,255,255,.5),
+    rgba(100,80,70,.08)
+  );
+  z-index: 30;
+  pointer-events: none;
+}
+
+/* ==================================================
+   INNER BORDER & PAGE NUMBERS
+================================================== */
+
+.cuteBorder {
+  position: absolute;
+  inset: 8px;
+  border: 1.5px solid #e8d8ca;
+  border-radius: 7px;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.cuteBorder::before {
+  content: "♡  ✦  ♡";
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 6px;
+  background: #fffaf2;
+  color: #d7a1a3;
+  font-size: 8px;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+
+.cuteBorder::after {
+  content: "✿";
+  position: absolute;
+  bottom: -8px;
+  right: 10px;
+  padding: 0 4px;
+  background: #faf3e8;
+  color: #d59a9d;
+  font-size: 11px;
+}
+
+.pageNo {
+  position: absolute;
+  bottom: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #c49a9c;
+  z-index: 15;
+  letter-spacing: 1px;
+}
+
+.leftPage .pageNo {
+  left: 14px;
+}
+
+.rightPage .pageNo {
+  right: 14px;
+}
+
+/* ==================================================
+   PHOTO & TEXT PAGES
+================================================== */
+
+.photoPage .paper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photoArea {
+  position: relative;
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photoFrame {
+  position: relative;
+  width: 80%;
+  padding: 6px 6px 20px;
+  background: white;
+  box-shadow: 0 7px 18px rgba(60,50,50,.20);
+  border-radius: 2px;
+}
+
+.photoFrame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.rotateLeft {
+  transform: rotate(-3deg);
+}
+
+.rotateRight {
+  transform: rotate(3deg);
+}
+
+.photoDecor {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 8;
+  pointer-events: none;
+}
+
+.decorStar {
+  right: 5px;
+  top: 3px;
+  font-size: 16px;
+  color: #ddb0a6;
+}
+
+.decorHeart {
+  right: 2px;
+  bottom: 4px;
+  font-size: 22px;
+  color: #e49aab;
+}
+
+.tinyDecor {
+  position: absolute;
+  right: 13px;
+  bottom: 18px;
+  color: #d59a9d;
+  font-size: 15px;
+  z-index: 10;
+}
+
+/* ==================================================
+   PAGE 5
+================================================== */
+
+.page5 .paper,
+.page6 .paper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page5Layout {
+  width: 88%;
+  height: 82%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.page5PhotoArea {
+  width: 82%;
+  display: flex;
+  justify-content: center;
+}
+
+.page5PhotoArea .photoFrame {
+  width: 90%;
+}
+
+.page5Text {
+  width: 90%;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #665955;
+  font-weight: 500;
+}
+
+/* ==================================================
+   PAGE 6
+================================================== */
+
+.page6Layout {
+  width: 88%;
+  height: 84%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.page6Text {
+  width: 90%;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #665955;
+}
+
+.page6PhotoArea {
+  position: relative;
+  width: 78%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page6PhotoArea .photoFrame {
+  width: 88%;
+}
+
+.decorHeart6 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #e49aab;
+  font-size: 22px;
+}
+
+/* ==================================================
+   TEXT PAGES
+================================================== */
+
+.textPage .paper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.pageLabel {
+  margin-bottom: 18px;
+  color: #b9828e;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.message {
+  width: 86%;
+  font-size: 13px;
+  line-height: 2;
+  text-align: center;
+  color: #665955;
+  font-weight: 500;
+}
+
+.longMessage {
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.littleHeart {
+  margin-top: 14px;
+  color: #d98fa4;
+  font-size: 22px;
+}
+
+/* ==================================================
+   BOOK ENDING
+================================================== */
+
+#bookEnding {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 18px;
+  background: #414d76;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .7s ease;
+}
+
+#bookEnding.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.endingHeart {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.endingTitle {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.endingSub {
+  margin-top: 5px;
+  margin-bottom: 18px;
+  font-size: 10px;
+  opacity: .8;
+  letter-spacing: 1px;
+}
+
+/* วิดีโอ 9:16 */
+
+.endingVideoWrapper {
+  width: min(72vw, 300px);
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #222;
+  box-shadow: 0 15px 35px rgba(20,20,40,.3);
+}
+
+#endingVideo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==================================================
+   BOTTOM
+================================================== */
+
+.bottomArea {
+  width: 100%;
+  min-height: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.toText {
+  font-size: 10px;
+  opacity: .8;
+}
+
+.swipeHint {
+  margin-top: 5px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  opacity: .7;
+}
+
+/* ==================================================
+   FLOATING HEARTS
+================================================== */
+
+#hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.heart {
+  position: absolute;
+  bottom: -30px;
+  opacity: 0;
+  animation: floatHeart linear forwards;
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translate(0, 0) scale(.7);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: .7;
+  }
+
+  80% {
+    opacity: .5;
+  }
+
+  100% {
+    transform: translate(var(--drift), -110vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* ==================================================
+   MOBILE FIX
+================================================== */
+
+@media (max-width: 600px) {
+
+  .mainContent {
+    padding: 18px 12px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .pageCount {
+    font-size: 10px;
+  }
+
+  .bookArea {
+    padding: 10px 0;
+  }
+
+  /* ลดหน้าปกไม่ให้ชนหัวข้อ */
+
+  .coverBook {
+    width: 42%;
+    max-width: 190px;
+  }
+
+  .coverTitle {
+    font-size: 15px;
+  }
+
+  .coverSmall {
+    font-size: 6px;
+    letter-spacing: 2px;
+  }
+
+  .coverDate {
+    font-size: 6px;
+  }
+
+  .openHint {
+    bottom: -24px;
+    font-size: 8px;
+  }
+
+  /* หนังสือด้านใน */
+
+  .book {
+    width: 96%;
+  }
+
+  .message {
+    width: 86%;
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  .longMessage {
+    font-size: 10.5px;
+    line-height: 1.75;
+  }
+
+  .pageLabel {
+    font-size: 7px;
+    margin-bottom: 12px;
+  }
+
+  .photoFrame {
+    width: 78%;
+    padding: 5px 5px 16px;
+  }
+
+  .page5Text,
+  .page6Text {
+    font-size: 10px;
+    line-height: 1.65;
+  }
+
+  .endingVideoWrapper {
+    width: min(70vw, 260px);
+  }
+}</style><script>document.addEventListener("DOMContentLoaded", function () {
+
+  /* ==================================================
+     ELEMENTS
+  ================================================== */
+
+  const giftScreen = document.getElementById("giftScreen");
+  const openGiftBtn = document.getElementById("openGiftBtn");
+  const quizScreen = document.getElementById("quizScreen");
+  const questionBoxes = document.querySelectorAll(".questionBox");
+  const answerButtons = document.querySelectorAll(".answerBtn");
+  const quizProgressText = document.getElementById("quizProgressText");
+  const envelopeScreen = document.getElementById("envelopeScreen");
+  const envelopeArea = document.getElementById("envelopeArea");
+  const envelope = document.querySelector(".envelope");
+  const couponScreen = document.getElementById("couponScreen");
+  const continueToBookBtn = document.getElementById("continueToBookBtn");
+  const passwordScreen = document.getElementById("passwordScreen");
+  const passwordInput = document.getElementById("passwordInput");
+  const passwordBtn = document.getElementById("passwordBtn");
+  const passwordError = document.getElementById("passwordError");
+  const mainContent = document.getElementById("mainContent");
+  const book = document.getElementById("book");
+  const coverBook = document.getElementById("coverBook");
+  const swipeHint = document.getElementById("swipeHint");
+  const spreads = document.querySelectorAll(".spread");
+  const bgMusic = document.getElementById("bgMusic");
+  const hearts = document.getElementById("hearts");
+  const bookEnding = document.getElementById("bookEnding");
+  const endingVideo = document.getElementById("endingVideo");
+
+
+  /* ==================================================
+     VARIABLES
+  ================================================== */
+
+  let currentQuestion = 0;
+  let currentSpread = 0;
+  const totalSpreads = spreads.length;
+
+  let envelopeStartX = 0;
+  let envelopeStartY = 0;
+  let envelopeDragging = false;
+  let envelopeOpened = false;
+
+  let startX = 0;
+  let startY = 0;
+  let isDragging = false;
+
+  let mouseStartX = 0;
+  let mouseDown = false;
+
+  let envelopeMouseX = 0;
+  let envelopeMouseDown = false;
+
+  let bookOpened = false;
+  let endingStarted = false;
+
+
+  /* ==================================================
+     INITIAL STATE
+  ================================================== */
+
+  questionBoxes.forEach(function (question) {
+    question.classList.remove("activeQuestion");
+    question.dataset.locked = "false";
+  });
+
+  if (questionBoxes[0]) {
+    questionBoxes[0].classList.add("activeQuestion");
+  }
+
+  currentQuestion = 0;
+
+  if (quizProgressText) {
+    quizProgressText.textContent = "1 / " + questionBoxes.length;
+  }
+
+  spreads.forEach(function (spread) {
+    spread.classList.remove("active");
+  });
+
+  if (spreads[0]) {
+    spreads[0].classList.add("active");
+  }
+
+  currentSpread = 0;
+  bookOpened = false;
+  endingStarted = false;
+  envelopeOpened = false;
+
+  if (book) {
+    book.classList.remove("revealed");
+    book.classList.remove("closing");
+  }
+
+  if (coverBook) {
+    coverBook.style.display = "block";
+    coverBook.classList.remove("opening");
+  }
+
+  if (bookEnding) {
+    bookEnding.classList.remove("show");
+  }
+
+  if (swipeHint) {
+    swipeHint.textContent = "tap the cover to open ♡";
+  }
+
+
+  /* ==================================================
+     OPEN GIFT
+  ================================================== */
+
+  if (openGiftBtn) {
+    openGiftBtn.addEventListener("click", function () {
+      if (bgMusic) {
+        bgMusic.volume = 0.55;
+        const musicPromise = bgMusic.play();
+        if (musicPromise && typeof musicPromise.catch === "function") {
+          musicPromise.catch(function () {});
+        }
+      }
+
+      giftScreen.classList.add("hidden");
+
+      setTimeout(function () {
+        giftScreen.style.display = "none";
+        quizScreen.classList.remove("hide");
+        quizScreen.classList.add("show");
+      }, 700);
+    });
+  }
+
+
+  /* ==================================================
+     QUIZ
+  ================================================== */
+
+  answerButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const question = button.closest(".questionBox");
+      if (!question) return;
+
+      if (question.dataset.locked === "true") return;
+
+      const correctAnswer = question.dataset.answer;
+      const selectedAnswer = button.dataset.choice;
+
+      if (selectedAnswer === correctAnswer) {
+        question.dataset.locked = "true";
+        button.classList.add("correct");
+
+        setTimeout(function () {
+          question.classList.remove("activeQuestion");
+          currentQuestion++;
+
+          if (currentQuestion < questionBoxes.length) {
+            const nextQuestion = questionBoxes[currentQuestion];
+            nextQuestion.dataset.locked = "false";
+            nextQuestion.classList.add("activeQuestion");
+
+            if (quizProgressText) {
+              quizProgressText.textContent = (currentQuestion + 1) + " / " + questionBoxes.length;
+            }
+          } else {
+            finishQuiz();
+          }
+        }, 450);
+      } else {
+        button.classList.add("wrong");
+        setTimeout(function () {
+          button.classList.remove("wrong");
+        }, 450);
+      }
+    });
+  });
+
+
+  /* ==================================================
+     FINISH QUIZ
+  ================================================== */
+
+  function finishQuiz() {
+    quizScreen.classList.remove("show");
+    quizScreen.classList.add("hide");
+
+    setTimeout(function () {
+      quizScreen.style.display = "none";
+      showEnvelope();
+    }, 600);
+  }
+
+
+  /* ==================================================
+     SHOW ENVELOPE
+  ================================================== */
+
+  function showEnvelope() {
+    envelopeScreen.style.display = "flex";
+    envelopeScreen.classList.remove("hide");
+
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        envelopeScreen.classList.add("show");
+      });
+    });
+  }
+
+
+  /* ==================================================
+     TEAR ENVELOPE
+  ================================================== */
+
+  function tearEnvelope() {
+    if (envelopeOpened) return;
+    envelopeOpened = true;
+
+    if (envelope) {
+      envelope.classList.add("tear");
+    }
+
+    setTimeout(function () {
+      envelopeScreen.classList.remove("show");
+      envelopeScreen.classList.add("hide");
+
+      setTimeout(function () {
+        envelopeScreen.style.display = "none";
+        showCoupons();
+      }, 550);
+    }, 650);
+  }
+
+
+  /* ==================================================
+     ENVELOPE TOUCH
+  ================================================== */
+
+  if (envelopeArea) {
+    envelopeArea.addEventListener("touchstart", function (event) {
+      const touch = event.changedTouches[0];
+      envelopeStartX = touch.screenX;
+      envelopeStartY = touch.screenY;
+      envelopeDragging = true;
+    }, { passive: true });
+
+    envelopeArea.addEventListener("touchend", function (event) {
+      if (!envelopeDragging) return;
+      const touch = event.changedTouches[0];
+      const diffX = touch.screenX - envelopeStartX;
+      const diffY = touch.screenY - envelopeStartY;
+      envelopeDragging = false;
+
+      if (Math.abs(diffX) > Math.abs(diffY) && diffX < -45) {
+        tearEnvelope();
+      }
+    }, { passive: true });
+
+    envelopeArea.addEventListener("mousedown", function (event) {
+      envelopeMouseX = event.clientX;
+      envelopeMouseDown = true;
+    });
+
+    envelopeArea.addEventListener("mouseup", function (event) {
+      if (!envelopeMouseDown) return;
+      const diff = event.clientX - envelopeMouseX;
+      envelopeMouseDown = false;
+
+      if (diff < -45) {
+        tearEnvelope();
+      }
+    });
+  }
+
+
+  /* ==================================================
+     COUPONS
+  ================================================== */
+
+  function showCoupons() {
+    couponScreen.style.display = "flex";
+    couponScreen.classList.remove("hide");
+
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        couponScreen.classList.add("show");
+      });
+    });
+  }
+
+
+  /* ==================================================
+     GO TO PASSWORD
+  ================================================== */
+
+  if (continueToBookBtn) {
+    continueToBookBtn.addEventListener("click", function () {
+      couponScreen.classList.remove("show");
+      couponScreen.classList.add("hide");
+
+      setTimeout(function () {
+        couponScreen.style.display = "none";
+        passwordScreen.style.display = "flex";
+        passwordScreen.classList.remove("hide");
+        passwordScreen.classList.add("show");
+
+        setTimeout(function () {
+          if (passwordInput) {
+            passwordInput.focus();
+          }
+        }, 100);
+      }, 500);
+    });
+  }
+
+
+  /* ==================================================
+     PASSWORD CHECK
+  ================================================== */
+
+  if (passwordBtn) {
+    passwordBtn.addEventListener("click", checkPassword);
+  }
+
+  if (passwordInput) {
+    passwordInput.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        checkPassword();
+      }
+    });
+  }
+
+  function checkPassword() {
+    if (!passwordInput) return;
+    const password = passwordInput.value.trim();
+
+    if (password === "020669") {
+      passwordError.textContent = "ถูกต้องแล้วว 🤍";
+
+      setTimeout(function () {
+        passwordScreen.classList.remove("show");
+        passwordScreen.classList.add("hide");
+
+        setTimeout(function () {
+          passwordScreen.style.display = "none";
+          if (mainContent) {
+            mainContent.classList.add("show");
+          }
+          startBook();
+        }, 550);
+      }, 500);
+    } else {
+      passwordError.textContent = "รหัสไม่ถูกน้า ลองใหม่อีกครั้ง 🤭";
+      passwordInput.value = "";
+    }
+  }
+
+
+  /* ==================================================
+     START BOOK
+  ================================================== */
+
+  function startBook() {
+    currentSpread = 0;
+    bookOpened = false;
+    endingStarted = false;
+
+    if (endingVideo) {
+      endingVideo.pause();
+      endingVideo.currentTime = 0;
+    }
+
+    if (bookEnding) {
+      bookEnding.classList.remove("show");
+    }
+
+    spreads.forEach(function (spread) {
+      spread.classList.remove("active");
+    });
+
+    if (spreads[0]) {
+      spreads[0].classList.add("active");
+    }
+
+    if (coverBook) {
+      coverBook.style.display = "block";
+      coverBook.classList.remove("opening");
+    }
+
+    if (book) {
+      book.classList.remove("revealed");
+      book.classList.remove("closing");
+    }
+
+    if (swipeHint) {
+      swipeHint.textContent = "tap the cover to open ♡";
+    }
+  }
+
+
+  /* ==================================================
+     OPEN BOOK
+  ================================================== */
+
+  function openBook() {
+    if (bookOpened) return;
+    bookOpened = true;
+
+    if (coverBook) {
+      coverBook.classList.add("opening");
+    }
+
+    if (swipeHint) {
+      swipeHint.textContent = "‹  swipe to turn the pages  ›";
+    }
+
+    setTimeout(function () {
+      if (book) {
+        book.classList.add("revealed");
+      }
+    }, 300);
+
+    setTimeout(function () {
+      if (coverBook) {
+        coverBook.style.display = "none";
+      }
+    }, 900);
+  }
+
+
+  /* ==================================================
+     COVER CLICK
+  ================================================== */
+
+  if (coverBook) {
+    coverBook.addEventListener("click", function () {
+      openBook();
+    });
+  }
+
+
+  /* ==================================================
+     SHOW SPREAD
+  ================================================== */
+
+  function showSpread(index) {
+    if (index < 0 || index >= totalSpreads) return;
+
+    spreads.forEach(function (spread) {
+      spread.classList.remove("active");
+    });
+
+    spreads[index].classList.add("active");
+    currentSpread = index;
+
+    if (!swipeHint) return;
+    swipeHint.textContent = "‹  swipe to turn the pages  ›";
+  }
+
+
+  /* ==================================================
+     NEXT PAGE
+  ================================================== */
+
+  function nextSpread() {
+    if (!bookOpened) return;
+
+    if (currentSpread < totalSpreads - 1) {
+      showSpread(currentSpread + 1);
+      return;
+    }
+
+    closeBook();
+  }
+
+
+  /* ==================================================
+     PREVIOUS PAGE
+  ================================================== */
+
+  function previousSpread() {
+    if (!bookOpened) return;
+    if (currentSpread <= 0) return;
+
+    showSpread(currentSpread - 1);
+  }
+
+
+  /* ==================================================
+     CLOSE BOOK & PLAY VIDEO
+  ================================================== */
+
+  function closeBook() {
+    if (endingStarted) return;
+
+    endingStarted = true;
+    bookOpened = false;
+
+    if (swipeHint) {
+      swipeHint.textContent = "";
+    }
+
+    if (book) {
+      book.classList.add("closing");
+    }
+
+    setTimeout(function () {
+      if (bookEnding) {
+        bookEnding.classList.add("show");
+      }
+
+      if (endingVideo) {
+        endingVideo.currentTime = 0;
+        const videoPromise = endingVideo.play();
+        if (videoPromise && typeof videoPromise.catch === "function") {
+          videoPromise.catch(function (err) {
+            console.log("Autoplay check:", err);
+          });
+        }
+      }
+
+    }, 900);
+  }
+
+
+  /* ==================================================
+     BOOK TOUCH & MOUSE EVENTS
+  ================================================== */
+
+  if (book) {
+    book.addEventListener("touchstart", function (event) {
+      if (!bookOpened) return;
+      const touch = event.changedTouches[0];
+      startX = touch.screenX;
+      startY = touch.screenY;
+      isDragging = true;
+    }, { passive: true });
+
+    book.addEventListener("touchend", function (event) {
+      if (!isDragging) return;
+      const touch = event.changedTouches[0];
+      const diffX = touch.screenX - startX;
+      const diffY = touch.screenY - startY;
+      isDragging = false;
+
+      if (Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX < -45) {
+          nextSpread();
+        } else if (diffX > 45) {
+          previousSpread();
+        }
+      }
+    }, { passive: true });
+
+    book.addEventListener("mousedown", function (event) {
+      if (!bookOpened) return;
+      mouseStartX = event.clientX;
+      mouseDown = true;
+    });
+
+    book.addEventListener("mouseup", function (event) {
+      if (!mouseDown) return;
+      const diff = event.clientX - mouseStartX;
+      mouseDown = false;
+
+      if (diff < -45) {
+        nextSpread();
+      } else if (diff > 45) {
+        previousSpread();
+      }
+    });
+  }
+
+
+  /* ==================================================
+     KEYBOARD
+  ================================================== */
+
+  document.addEventListener("keydown", function (event) {
+    if (!bookOpened) return;
+
+    if (event.key === "ArrowRight") {
+      nextSpread();
+    }
+
+    if (event.key === "ArrowLeft") {
+      previousSpread();
+    }
+  });
+
+
+  /* ==================================================
+     FLOATING HEARTS
+  ================================================== */
+
+  function createFloatingHeart() {
+    if (!hearts) return;
+
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    const symbols = ["♡", "♥", "🤍", "✦", "✧"];
+    heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+    heart.style.left = (5 + Math.random() * 90) + "%";
+    heart.style.fontSize = (12 + Math.random() * 13) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+    heart.style.setProperty("--drift", (-40 + Math.random() * 80) + "px");
+
+    hearts.appendChild(heart);
+
+    setTimeout(function () {
+      heart.remove();
+    }, 11000);
+  }
+
+  setInterval(createFloatingHeart, 1200);
+
+});
+</script>
